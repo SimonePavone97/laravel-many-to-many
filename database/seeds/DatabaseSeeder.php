@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,12 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(
-            [
-                TagSeeder::class,
-                CategorySeeder::class,
-                PostTableSeeder::class,
-            ]
-        );
+        $this->call(UserSeeder::class, TagSeeder::class, CategorySeeder::class, PostTableSeeder::class);
     }
 }
